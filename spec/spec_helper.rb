@@ -1,8 +1,10 @@
 require 'bundler'
-# require 'simplecov'
-# SimpleCov.start do
-#   add_group "Lib", "lib"
-# end
+require 'simplecov'
+SimpleCov.start do
+  add_group "Lib", "lib"
+end
+
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e

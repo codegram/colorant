@@ -1,89 +1,55 @@
-GIT
-  remote: git://github.com/aslakhellesoy/aruba.git
-  revision: 1cca0f2433b418e7e3a4a3d5671c2531bf5a7101
+PATH
+  remote: .
+  specs:
+    colorant (0.1.2)
+      color_namer
+      trollop
+
+GEM
+  remote: http://rubygems.org/
   specs:
     aruba (0.2.4)
       background_process
       cucumber (~> 0.9.3)
-
-GIT
-  remote: git://github.com/aslakhellesoy/cucumber.git
-  revision: 19a87c14098afb7ed418b234b22a9e5b91eda5f4
-  specs:
+    background_process (1.2)
+    builder (2.1.2)
+    color (1.4.1)
+    color_namer (0.1.0)
+      color (>= 1.4.1)
     cucumber (0.9.4)
       builder (~> 2.1.2)
       diff-lcs (~> 1.1.2)
       gherkin (~> 2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
-
-GIT
-  remote: git://github.com/retro/color-namer.git
-  revision: e5ba1bd142ecc4c22ece12784decd5e9ce1ba43e
-  specs:
-    color_namer (0.1.0)
-      color (>= 1.4.1)
-
-GIT
-  remote: git://github.com/rspec/rspec-core.git
-  revision: 62402739a3e2f0e29ca025e60c600c1100f21424
-  specs:
-    rspec-core (2.2.pre)
-
-GIT
-  remote: git://github.com/rspec/rspec-expectations.git
-  revision: 8729e9adbb2e1b50b8db2877afefd2e61ba18ad5
-  specs:
-    rspec-expectations (2.2.pre)
-      diff-lcs (~> 1.1.2)
-
-GIT
-  remote: git://github.com/rspec/rspec-mocks.git
-  revision: ed672c6a2b943eac5b537d1f2c5beef71bb3aee9
-  specs:
-    rspec-mocks (2.2.pre)
-
-GIT
-  remote: git://github.com/rspec/rspec.git
-  revision: 79447df6d32ec9e9eb3194bd1897293d824ca298
-  specs:
-    rspec (2.2.pre)
-      rspec-core (~> 2.2)
-      rspec-expectations (~> 2.2)
-      rspec-mocks (~> 2.2)
-
-PATH
-  remote: .
-  specs:
-    colorant (0.1.2)
-
-GEM
-  remote: http://rubygems.org/
-  specs:
-    background_process (1.2)
-    builder (2.1.2)
-    color (1.4.1)
     diff-lcs (1.1.2)
     gherkin (2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
     json (1.4.6)
+    rspec (2.1.0)
+      rspec-core (~> 2.1.0)
+      rspec-expectations (~> 2.1.0)
+      rspec-mocks (~> 2.1.0)
+    rspec-core (2.1.0)
+    rspec-expectations (2.1.0)
+      diff-lcs (~> 1.1.2)
+    rspec-mocks (2.1.0)
+    simplecov (0.3.7)
+      simplecov-html (>= 0.3.7)
+    simplecov-html (0.3.9)
     term-ansicolor (1.0.5)
     trollop (1.16.2)
-    watchr (0.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  aruba!
-  bundler
-  color_namer!
+  aruba
+  bundler (>= 1.0.3)
+  color_namer
   colorant!
-  cucumber!
-  rspec!
-  rspec-core!
-  rspec-expectations!
-  rspec-mocks!
+  cucumber
+  rspec
+  simplecov
   trollop
-  watchr

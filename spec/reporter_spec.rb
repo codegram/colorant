@@ -60,16 +60,16 @@ module Colorant
 
           it 'outputs a simple ordered array with the image color composition' do
             subject.report(arnolfini_data, :reporter => :stdout)
-            @out.string.should include "\tBrown\t\t-- 70.65 %\n"
-            @out.string.should include "\tBrown\t\t-- 29.35 %\n"
+            @out.string.should include "\tBrown\t\t\t\t\t\t-- 70.65 %\n"
+            @out.string.should include "\tBrown\t\t\t\t\t\t-- 29.35 %\n"
           end
 
           context "when called with :extended => true" do
 
             it 'outputs more accurate info about the color' do
               subject.report(arnolfini_data, :extended => true, :reporter => :stdout)
-              @out.string.should include "\tBistre Brown\t\t-- 70.65 %\n"
-              @out.string.should include "\tAu Chico Brown\t\t-- 29.35 %\n"
+              @out.string.should include "\tBistre Brown\t\t\t\t\t\t-- 70.65 %\n"
+              @out.string.should include "\tAu Chico Brown\t\t\t\t\t\t-- 29.35 %\n"
             end
 
             it 'removes duplication to keep the color name nice' do
@@ -77,8 +77,8 @@ module Colorant
                                                                    ["FFFF00", "Yellow", "Yellow"])
 
               subject.report(arnolfini_data, :extended => true, :reporter => :stdout)
-              @out.string.should include "\tBrown Derby\t\t-- 70.65 %\n"
-              @out.string.should include "\tYellow\t\t-- 29.35 %\n"
+              @out.string.should include "\tBrown Derby\t\t\t\t\t\t-- 70.65 %\n"
+              @out.string.should include "\tYellow\t\t\t\t\t\t-- 29.35 %\n"
             end
           end
 
