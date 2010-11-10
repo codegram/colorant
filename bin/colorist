@@ -5,11 +5,22 @@ require 'trollop'
 require 'colorist'
 
 opts = Trollop::options do
-  opt :file, "Image file to process"
+  version "colorist 0.1.0 (c) 2010 Codegram"
+  banner <<-EOS
+  Colorist is a simple utility to extract the colors present in an image.
+
+  Usage:
+        colorist <filename> [options]
+  where [options] are:
+EOS
   opt :colors, "Number of colors to process", :default => "8"
   opt :depth, "Image depth in bits", :default => "16"
-  opt :output, "Output reporter", :default => "stdout"
+  opt :extended, "Extended report (more accurate color names)"
 end
+Trollop::die :colors, "must be at least 1" if opts[:colors].to_i < 1
+Trollop::die :depth, "must be at least 1" if opts[:depth].to_i < 1
 
-file = opts.delete(:file)
+opts.update(:reporter => :stdout) # Default for CLI
+
+file = ARGV.shift
 Colorist.process(file, opts)

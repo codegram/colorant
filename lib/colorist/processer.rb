@@ -9,8 +9,8 @@ module Colorist
         raise ArgumentError.new "#{file} does not exist or is not a valid image file"
       end
       @file = file
-      @colors = options[:colors] || 8
-      @depth = options[:depth] || 16
+      @colors = options[:colors] ? options[:colors].to_i : 8
+      @depth = options[:depth] ? options[:depth].to_i : 16
       @reporter_options = {:reporter => options[:reporter],
                            :extended => options[:extended]}
       @data = []
@@ -18,7 +18,7 @@ module Colorist
 
     def process!
       raw_data = `convert #{file} -format %c -colors #{colors} -depth #{depth} histogram:info:- | sort -r -k 1`
-      @data = parse(raw_data)
+      @data = Parser.parse(raw_data)
       Reporter.report(@data, @reporter_options)
     end
 

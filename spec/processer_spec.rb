@@ -31,14 +31,9 @@ module Colorist
       end
 
       describe "#process!" do
-        it 'gets the colors from the image' do
-          Reporter.stub(:report)
-          subject.process!
-
-          subject.data.should == arnolfini_data
-        end
-        it 'calls Reporter.report with parsed data' do
-          Reporter.should_receive(:report).with(arnolfini_data, :reporter => nil, :extended => nil)
+        it 'calls first the Parser and then the Reporter' do
+          Parser.should_receive(:parse).and_return arnolfini_data
+          Reporter.should_receive(:report).with(arnolfini_data, :reporter => nil, :extended => nil).ordered
           subject.process!
         end
       end

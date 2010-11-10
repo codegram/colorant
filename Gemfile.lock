@@ -69,6 +69,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     json (1.4.6)
     term-ansicolor (1.0.5)
+    trollop (1.16.2)
     watchr (0.7)
 
 PLATFORMS
@@ -84,4 +85,5 @@ DEPENDENCIES
   rspec-core!
   rspec-expectations!
   rspec-mocks!
+  trollop
   watchr

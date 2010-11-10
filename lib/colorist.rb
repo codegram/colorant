@@ -3,7 +3,8 @@ require 'colorist/reporter'
 require 'colorist/processer'
 
 module Colorist
-  def process(*args)
-    Processor.process(*args)
+  def self.process(*args)
+    raise "You must have `convert` (ImageMagick) installed." unless `which convert` =~ /convert/
+    Processer.process(*args)
   end
 end
