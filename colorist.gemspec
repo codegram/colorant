@@ -14,11 +14,13 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "colorist"
 
-  # s.add_runtime_dependency "color_namer"
+  s.add_development_dependency "bundler", ">= 1.0.3"
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'cucumber'
+  s.add_development_dependency 'aruba'
 
-  # s.add_development_dependency "bundler", ">= 1.0.3"
-  # s.add_development_dependency "rspec", ">= 2.1.0"
-  # s.add_development_dependency "simplecov"
+  s.add_runtime_dependency 'trollop'
+  s.add_runtime_dependency "color_namer"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").map{|f| f =~ /^bin\/(.*)/ ? $1 : nil}.compact
