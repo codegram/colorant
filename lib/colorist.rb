@@ -1,0 +1,3 @@
+module Colorist
+  # Your code goes here...
+end
