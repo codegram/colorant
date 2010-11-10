@@ -30,7 +30,7 @@ module Colorant
 
     def stdout_report(array)
       array.each do |line|
-        stdout << "\t#{line.first}\t\t-- #{line.last} %\n"
+        stdout << "\t#{line.first}\t\t\t\t\t\t-- #{line.last} %\n"
       end
       stdout << "\n"
     end
