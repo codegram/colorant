@@ -1,12 +1,5 @@
 module Colorist
-  class Extractor
-
-    class << self
-      def process(*args)
-        new(*args).process!
-      end
-    end
-
+  class Processer
     attr_reader :colors, :depth, :file, :data
 
     def initialize(file, options = {})
@@ -18,16 +11,22 @@ module Colorist
       @file = file
       @colors = options[:colors] || 8
       @depth = options[:depth] || 16
+      @reporter_options = {:reporter => options[:reporter],
+                           :extended => options[:extended]}
       @data = []
     end
 
     def process!
       raw_data = `convert #{file} -format %c -colors #{colors} -depth #{depth} histogram:info:- | sort -r -k 1`
       @data = parse(raw_data)
+      Reporter.report(@data, @reporter_options)
     end
 
-    def report
-      raise "Must call #process first!" if @data.empty?
+    class << self
+      def process(*args)
+        instance = new(*args)
+        instance.process!
+      end
     end
 
     private
@@ -45,11 +44,17 @@ module Colorist
                         :green => percent_to_number(green),
                         :blue => percent_to_number(blue) }
       end
+      total = collection.map{|element| element[:freq]}.inject(:+)
+      collection.each{|element| element[:freq] = number_to_percent(element[:freq], total)}
       collection
     end
 
     def percent_to_number(percent)
       ("%.2f" % (255 * percent)).to_f
+    end
+
+    def number_to_percent(number, total)
+      ("%.2f" % ((number * 100.to_f) / total)).to_f
     end
 
   end

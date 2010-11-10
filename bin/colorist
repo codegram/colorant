@@ -1,3 +1,15 @@
 #!/usr/bin/env ruby
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+
+require 'trollop'
 require 'colorist'
-require 'colorist/cli'
+
+opts = Trollop::options do
+  opt :file, "Image file to process"
+  opt :colors, "Number of colors to process", :default => "8"
+  opt :depth, "Image depth in bits", :default => "16"
+  opt :output, "Output reporter", :default => "stdout"
+end
+
+file = opts.delete(:file)
+Colorist.process(file, opts)
