@@ -2,15 +2,15 @@
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
 
 require 'trollop'
-require 'colorist'
+require 'colorant'
 
 opts = Trollop::options do
-  version "colorist 0.1.0 (c) 2010 Codegram"
+  version "colorant 0.1.0 (c) 2010 Codegram"
   banner <<-EOS
-  Colorist is a simple utility to extract the colors present in an image.
+  Colorant is a simple utility to extract the colors present in an image.
 
   Usage:
-        colorist <filename> [options]
+        colorant <filename> [options]
   where [options] are:
 EOS
   opt :colors, "Number of colors to process", :default => "8"
@@ -23,4 +23,4 @@ Trollop::die :depth, "must be at least 1" if opts[:depth].to_i < 1
 opts.update(:reporter => :stdout) # Default for CLI
 
 file = ARGV.shift
-Colorist.process(file, opts)
+Colorant.process(file, opts)

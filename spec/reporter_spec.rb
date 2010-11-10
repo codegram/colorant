@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Colorist
+module Colorant
   describe Reporter do
 
     describe "class methods" do

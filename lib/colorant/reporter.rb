@@ -1,6 +1,6 @@
 require 'color_namer'
 
-module Colorist
+module Colorant
   class Reporter
 
     class << self

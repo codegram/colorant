@@ -1,4 +1,4 @@
-module Colorist
+module Colorant
   class Processer
     attr_reader :colors, :depth, :file, :data
 

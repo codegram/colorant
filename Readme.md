@@ -1,6 +1,6 @@
-# colorist
+# colorant
 
-Colorist is a small utility to determine which colors are present in a
+Colorant is a small utility to determine which colors are present in a
 particular image, and how much they appear. It wraps ImageMagick's `convert`
 command, so it has to be installed on the system.
 
@@ -8,17 +8,17 @@ command, so it has to be installed on the system.
 
 Just put it in your Gemfile:
 
-    gem "colorist"
+    gem "colorant"
 
 And wherever you want, you only need a filename, and you get an array of color
 percentual frequencies of your image.
 
-    Colorist.process "path/to/my/leaves.jpg"
+    colorant.process "path/to/my/leaves.jpg"
     # => [["Brown", 78.95], ["Green", 3.85], ...]
 
 These are other options you can specify:
 
-    Colorist.process "file", :colors => 5,      # Default is 8
+    colorant.process "file", :colors => 5,      # Default is 8
                              :depth => 24,      # Default is 16
                              :extended => true  # Use more accurate color names
 
@@ -26,10 +26,10 @@ These are other options you can specify:
 
 ## Command Line Usage
 
-You can also use colorist from the command line. It is simple:
+You can also use colorant from the command line. It is simple:
 
-    gem install colorist
-    colorist path/to/my/photo.jpg --colors 9 --extended
+    gem install colorant
+    colorant path/to/my/photo.jpg --colors 9 --extended
 
 And the output:
 

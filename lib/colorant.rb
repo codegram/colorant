@@ -1,8 +1,8 @@
-require 'colorist/parser'
-require 'colorist/reporter'
-require 'colorist/processer'
+require 'colorant/parser'
+require 'colorant/reporter'
+require 'colorant/processer'
 
-module Colorist
+module Colorant
   def self.process(*args)
     raise "You must have `convert` (ImageMagick) installed." unless `which convert` =~ /convert/
     Processer.process(*args)

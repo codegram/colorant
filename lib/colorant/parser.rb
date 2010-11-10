@@ -1,4 +1,4 @@
-module Colorist
+module Colorant
   class Parser
 
     class << self

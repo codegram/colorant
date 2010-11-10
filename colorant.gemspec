@@ -1,18 +1,18 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path("../lib/colorist/version", __FILE__)
+require File.expand_path("../lib/colorant/version", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "colorist"
-  s.version     = Colorist::VERSION
+  s.name        = "colorant"
+  s.version     = Colorant::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Josep M. Bach', 'Josep Jaume Rey', 'Oriol Gual']
   s.email       = ['info@codegram.com']
-  s.homepage    = "http://github.com/codegram/colorist"
+  s.homepage    = "http://github.com/codegram/colorant"
   s.summary     = "Easily extract the colors of any image file!"
   s.description = "Easily extract the colors of any image file!"
 
   s.required_rubygems_version = ">= 1.3.6"
-  s.rubyforge_project         = "colorist"
+  s.rubyforge_project         = "colorant"
 
   s.add_development_dependency "bundler", ">= 1.0.3"
   s.add_development_dependency 'rspec'

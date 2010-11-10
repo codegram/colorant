@@ -13,7 +13,7 @@ end
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-require 'colorist'
+require 'colorant'
 require 'rspec'
 
 # Requires supporting files with custom matchers and macros, etc,

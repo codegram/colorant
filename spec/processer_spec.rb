@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Colorist
+module Colorant
   describe Processer do
 
     subject { Processer.new('spec/support/arnolfini.jpg') }
