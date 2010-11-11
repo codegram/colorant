@@ -1,6 +1,6 @@
 Feature: Command line interpreter
 
-  You can use Colorist from the command line as well.
+  You can use Colorant from the command line as well.
 
   Scenario: get the most relevant colors out of the Arnolfini Portrait
     When I run "colorant arnolfini.jpg --colors 8 --depth 24"
