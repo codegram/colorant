@@ -13,12 +13,12 @@ Just put it in your Gemfile:
 And wherever you want, you only need a filename, and you get an array of color
 percentual frequencies of your image.
 
-    colorant.process "path/to/my/leaves.jpg"
+    Colorant.process "path/to/my/leaves.jpg"
     # => [["Brown", 78.95], ["Green", 3.85], ...]
 
 These are other options you can specify:
 
-    colorant.process "file", :colors => 5,      # Default is 8
+    Colorant.process "file", :colors => 5,      # Default is 8
                              :depth => 24,      # Default is 16
                              :extended => true  # Use more accurate color names
 
