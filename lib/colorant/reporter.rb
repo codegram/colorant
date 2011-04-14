@@ -19,7 +19,19 @@ module Colorant
           [color.last, row[:freq]]
         end
       end
-      send(:"#{options[:reporter] || :ruby}_report", data)
+
+      freqs = {}
+      data.each do |color|
+        if freqs[color[0]]
+          freqs[color[0]] += color[1]
+        else
+          freqs[color[0]] = color[1]
+        end
+      end
+
+      colors = freqs.to_a.sort{|a, b| b[1] <=> a[1]}
+
+      send(:"#{options[:reporter] || :ruby}_report", colors)
     end
 
     private
