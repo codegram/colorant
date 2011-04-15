@@ -17,7 +17,7 @@ module Colorant
     end
 
     def process!
-      raw_data = `convert #{file} -format %c -colors #{colors} -depth #{depth} histogram:info:- | sort -r -k 1`
+      raw_data = `convert #{file} -gravity Center -crop 80x60% +repage -format %c -colors #{colors} -depth #{depth} histogram:info:- | sort -r -k 1`
       @data = Parser.parse(raw_data)
       Reporter.report(@data, @reporter_options)
     end
