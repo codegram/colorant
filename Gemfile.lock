@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    colorant (0.1.2)
+    colorant (0.1.3)
       color_namer
       trollop
 
@@ -47,9 +47,7 @@ PLATFORMS
 DEPENDENCIES
   aruba
   bundler (>= 1.0.3)
-  color_namer
   colorant!
   cucumber
   rspec
   simplecov
-  trollop

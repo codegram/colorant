@@ -31,8 +31,7 @@ module Colorant
       describe "#report" do
 
         it 'outputs a simple ordered array with the image color composition' do
-          subject.report(arnolfini_data).should == [["Brown", 70.65],
-                                                    ["Brown", 29.35]]
+          subject.report(arnolfini_data).should == [["Brown", 100]]
         end
 
         context "when called with :extended => true" do
@@ -60,8 +59,7 @@ module Colorant
 
           it 'outputs a simple ordered array with the image color composition' do
             subject.report(arnolfini_data, :reporter => :stdout)
-            @out.string.should include "\tBrown\t\t\t\t\t\t-- 70.65 %\n"
-            @out.string.should include "\tBrown\t\t\t\t\t\t-- 29.35 %\n"
+            @out.string.should include "\tBrown\t\t\t\t\t\t-- 100.0 %\n"
           end
 
           context "when called with :extended => true" do
